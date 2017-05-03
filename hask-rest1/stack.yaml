@@ -1,0 +1,10 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- '.'
+extra-deps:
+- aeson-1.2.0.0
+- servant-0.10
+- servant-client-0.10
+- servant-server-0.10
+resolver: lts-8.13

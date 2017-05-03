@@ -1,0 +1,74 @@
+name:                hask-rest1
+version:             0.1.0.0
+synopsis:            simple hask rest server/client test
+description:         simple hask rest server/client test
+homepage:            https://github.com/cl04/rest1/hask-rest1#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Baojun Wang
+maintainer:          wangbj@gmail.com
+copyright:           3-Clause BSD
+category:            misc
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     API
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring >= 0.10 && < 1
+                     , aeson >= 1.1 && < 2.0
+                     , http-client >= 0.5 && < 1.0
+                     , http-client-tls >= 0.3 && < 1.0
+                     , servant >= 0.10 && < 1.0
+                     , servant-server >= 0.10 && < 1.0
+                     , servant-client >= 0.10 && < 1.0
+                     , text >= 1.2 && < 1.4
+                     , mtl >= 2.2 && < 2.4
+                     , unix >= 2.7 && < 3
+  default-language:    Haskell2010
+
+executable hask-rest1-server
+  hs-source-dirs:      app
+  main-is:             Server.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , bytestring >= 0.10 && < 1
+                     , aeson >= 1.1 && < 2.0
+                     , http-client >= 0.5 && < 1.0
+                     , http-client-tls >= 0.3 && < 1.0
+                     , servant >= 0.10 && < 1.0
+                     , servant-server >= 0.10 && < 1.0
+                     , servant-client >= 0.10 && < 1.0
+                     , text >= 1.2 && < 1.4
+                     , mtl >= 2.2 && < 2.4
+                     , unix >= 2.7 && < 3
+                     , http-media >= 0.6 && < 1
+                     , wai >= 3.2 && < 4
+                     , warp >= 3.2 && < 4
+                     , hask-rest1
+  default-language:    Haskell2010
+
+executable hask-rest1-client
+  hs-source-dirs:      app
+  main-is:             Client.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , bytestring >= 0.10 && < 1
+                     , aeson >= 1.1 && < 2.0
+                     , http-client >= 0.5 && < 1.0
+                     , http-client-tls >= 0.3 && < 1.0
+                     , servant >= 0.10 && < 1.0
+                     , servant-server >= 0.10 && < 1.0
+                     , servant-client >= 0.10 && < 1.0
+                     , text >= 1.2 && < 1.4
+                     , mtl >= 2.2 && < 2.4
+                     , unix >= 2.7 && < 3
+                     , optparse-applicative >= 0.13 && < 1
+                     , hask-rest1
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/cl04/rest1/hask-rest1
