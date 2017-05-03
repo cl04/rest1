@@ -2,9 +2,9 @@
 
 service below rest api:
 
-url base: https://localhost:8000
+url base: http://localhost:8000
 
-1. end point 1, query all users with uid >= 100. ep = `/users`   (https://localhost/users)
+1. end point 1, query all users with uid >= 100. ep = `/users`   (http://localhost:8000/users)
 2. end point 2, query user by user id or group id, ep = `/user?uid=<UID>&gid=<GID>` (return list of users)
 
 return json object
