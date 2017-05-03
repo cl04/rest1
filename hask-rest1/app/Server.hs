@@ -10,7 +10,15 @@ import Servant.Server
 import Servant.API
 import Data.Proxy
 
+import System.Posix.User
+
 import API
+
+fromUserEnt :: UserEntry -> User
+fromUserEnt (UserEntry name pass uid gid gecos homedir sh) = User name (fromIntegral uid) (fromIntegral gid) sh
+
+userdb :: IO [User]
+userdb = getAllUserEntries >>= \ents -> return . map fromUserEnt . filter (\ent -> ((fromIntegral . userID) ent) >= 100) $ ents
 
 server1 :: [User] -> Server API
 server1 users = listUsers users
